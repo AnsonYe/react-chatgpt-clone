@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Chrome",
+            "request": "launch",
+            "type": "chrome",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}",
+            "sourceMaps": true,
+            "sourceMapPathOverrides": {
+                "webpack:///./*": "${webRoot}/src/*"
+            },
+            "skipFiles": [
+                "${workspaceFolder}/node_modules/**/*.js"
+            ]
+        },
+        {
+        "type": "pwa-node",
+        "request": "launch",
+        "name": "Debug Nodemon",
+        "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/nodemon",
+        "program": "${workspaceFolder}/server.js",
+        "restart": true,
+        "console": "integratedTerminal",
+        "internalConsoleOptions": "neverOpen",
+        "skipFiles": ["<node_internals>/**"],
+        "port": 8000
+    }]
+}
